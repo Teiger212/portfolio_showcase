@@ -23,13 +23,15 @@ const Header = (props: Props) => (
         bgColor="transparent"
       />
 
-      <a
-        href="mailto:eyalteiger@gmail.com"
-        className="flex flex-row items-center text-gray-300 cursor-pointer"
-      >
-        <SocialIcon fgColor="gray" bgColor="transparent" network="email" />
+      <div className="flex flex-row items-center text-gray-300 cursor-pointer">
+        <SocialIcon
+          href="mailto:eyalteiger@gmail.com"
+          fgColor="gray"
+          bgColor="transparent"
+          network="email"
+        />
         <p className="uppercase hidden md:inline-flex">contact me</p>
-      </a>
+      </div>
     </motion.div>
   </header>
 )

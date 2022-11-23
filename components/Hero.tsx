@@ -9,11 +9,12 @@ type Props = {}
 
 const Hero = (props: Props) => {
   const [text] = useTypewriter({
-    words: ['Hey, Eyal here', 'Sometimes funny', 'Always curious'],
+    words: ['Hey, Eyal here!', 'Sometimes funny', 'Always curious'],
     loop: 0,
   })
 
   return (
+    <section id="hero" className="snap-center">
       <div className="h-screen flex flex-col items-center justify-center text-center overflow-hidden space-y-8">
         <BackgroundCircles />
         <div className="z-20">
@@ -24,7 +25,7 @@ const Hero = (props: Props) => {
             className="relative rounded-full h-32 w-32 mx-auto object-cover"
           />
           <div className="mt-4 mb-2">
-            <h1 className="ml-2 text-sm uppercase tracking-[0.5em] text-gray-400">
+            <h1 className="text-sm uppercase tracking-[0.5em] pl-2 text-gray-400">
               Web Developer
             </h1>
 
@@ -47,6 +48,7 @@ const Hero = (props: Props) => {
           </Link>
         </div>
       </div>
+    </section>
   )
 }
 
