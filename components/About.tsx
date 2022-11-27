@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import profilePic from '../public/profile.jpeg'
 import { motion } from 'framer-motion'

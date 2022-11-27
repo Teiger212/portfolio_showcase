@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import ExperienceCard from './ExperienceCard'
 
 const Experience = () => {
   return (
@@ -12,7 +12,11 @@ const Experience = () => {
       <h3 className="absolute top-24 uppercase tracking-[1em] text-gray-400 text-2xl">
         Experience
       </h3>
-      <div></div>
+      <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-mandatory">
+        <ExperienceCard />
+        <ExperienceCard />
+        <ExperienceCard />
+      </div>
     </motion.div>
   )
 }

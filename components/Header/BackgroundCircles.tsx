@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 
 type Props = {}
@@ -12,7 +11,7 @@ const BackgroundCircles = (props: Props) => {
         scale: [1, 2, 2, 2.5, 1],
         borderRadius: ['20%', '20%', '50%', '80%', '20%'],
       }}
-      transition={{ duration: 5 }}
+      transition={{ duration: 3 }}
       className="relative flex justify-center items-center"
     >
       <div className="border border-[#333] rounded-full absolute h-[200px] w-[200px] mt-52 animate-ping" />
