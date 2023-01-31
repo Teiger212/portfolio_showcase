@@ -5,7 +5,7 @@ import bart from '../../public/bart.jpeg'
 
 const ExperienceCard = () => {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] lg:w-[900px] snap-center bg-[#373737] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-300">
+    <article className="flex flex-col rounded-lg items-center space-y-7 shrink-0 snap-center w-[500px] md:w-[600px] lg:w-[900px] bg-[#373737] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-300">
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -15,9 +15,9 @@ const ExperienceCard = () => {
         <Image
           src={bart}
           alt="compamy logo"
-          width={32}
-          height={32}
-          className="w-32 h-32 rounded-full object-cover object-center xl:h-48 xl:w-48"
+          width={28}
+          height={28}
+          className="w-28 h-28 rounded-full object-cover object-center xl:h-32 xl:w-32"
         />
       </motion.div>
       <div className="px-0 md:px-10">

@@ -9,9 +9,7 @@ const About = () => (
     transition={{ duration: 1.5 }}
     className="flex flex-col relative h-screen text-center items-center max-w-7xl mx-auto px-10 justify-evenly md:text-left md:flex-row"
   >
-    <h3 className="absolute top-24 uppercase tracking-[1em] pl-5 text-gray-400 text-2xl">
-      About
-    </h3>
+    <h3 className="section-title">About</h3>
     <motion.div
       initial={{ x: -200, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
