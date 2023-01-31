@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
-import ContactRow from './contactRow'
+import ContactRow from './ContactRow'
 
 type Props = {}
 
@@ -11,12 +11,15 @@ type Inputs = {
   message: string
 }
 
+const PHONE_NUMBER = '+12345678'
+
 const Contact = (props: Props) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>({ mode: 'onBlur' })
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     // console.log(data)
     window.location.href = `mailto:eyalteiger@gmail.com?subject=${data.subject}&body=Hi my name is ${data.name}. ${data.message}.`
@@ -33,7 +36,7 @@ const Contact = (props: Props) => {
           </span>
         </h4>
         <div className="space-y-10">
-          <ContactRow label="+12345678">
+          <ContactRow label={PHONE_NUMBER}>
             <PhoneIcon className="text-[#faed3f] h-7 w-7 animate-pulse" />
           </ContactRow>
           <ContactRow label="123 Marlow Dr., Eerie, PA">

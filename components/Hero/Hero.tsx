@@ -1,13 +1,17 @@
-import React from 'react'
-import { Cursor, useTypewriter } from 'react-simple-typewriter'
-import BackgroundCircles from './Header/BackgroundCircles'
 import Image from 'next/image'
-import profilePic from '../public/profile.jpeg'
 import Link from 'next/link'
+import React, { useCallback, useMemo } from 'react'
+import { Cursor, useTypewriter } from 'react-simple-typewriter'
+import { urlFor } from '../../sanity'
+import type { PageInfo } from '../../types'
+import BackgroundCircles from '../Header/BackgroundCircles'
+import profilePic from '../../public/profile.jpeg'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-const Hero = (props: Props) => {
+const Hero = ({ pageInfo }: Props) => {
   const [text] = useTypewriter({
     words: ['Hey, Eyal here!', 'Sometimes funny', 'Always curious'],
     loop: 0,
@@ -18,21 +22,12 @@ const Hero = (props: Props) => {
       <BackgroundCircles />
       <div className="z-20">
         <Image
-          src={profilePic}
+          src={urlFor(pageInfo?.heroImage).url()}
           alt="profile pic"
-          placeholder="blur"
-          className="relative rounded-full h-32 w-32 mx-auto object-cover"
+          className="relative rounded-full mx-auto object-cover"
+          width={128}
+          height={128}
         />
-        <div className="mt-4 mb-2">
-          <h1 className="text-sm uppercase tracking-[0.5em] pl-2 text-gray-400">
-            Web Developer
-          </h1>
-
-          <h2 className="text-5xl lg:text-6xl font-semibold px-10">
-            <span>{text}</span>
-            <Cursor cursorColor="#faed3f" />
-          </h2>
-        </div>
         <Link href="#about">
           <button className="hero-button">About</button>
         </Link>

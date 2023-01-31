@@ -1,8 +1,14 @@
 import Image from 'next/image'
 import profilePic from '../public/profile.jpeg'
 import { motion } from 'framer-motion'
+import { PageInfo } from '../types'
+import { urlFor } from '../sanity'
 
-const About = () => (
+type Props = {
+  pageInfo: PageInfo
+}
+
+const About = ({ pageInfo }: Props) => (
   <motion.div
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
@@ -17,10 +23,11 @@ const About = () => (
       className="-mb-20 md:mb-0 flex-shrink-0"
     >
       <Image
-        src={profilePic}
+        src={urlFor(pageInfo?.profilePic).url()}
         alt="profile pic"
-        placeholder="blur"
-        className="rounded-full h-56 w-56 mx-auto object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+        className="rounded-full mx-auto object-cover h-56 md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+        width={224}
+        height={224}
       />
     </motion.div>
 
@@ -30,13 +37,14 @@ const About = () => (
         background
       </h3>
       <p className="text-base">
-        Currently live in Cusco, Peru. Born and raised in Israel, have roots in
+        {/* Currently live in Cusco, Peru. Born and raised in Israel, have roots in
         Sweden & the UK. An average hiker who likes exploring new cultures,
         nature and also a decent cook. Currently focused on Javascript, mostly
         front-end using React. On a journey building my own online business and
         learning on my way up. Have a keen eye for UI, UX & design in general.
         Interested and open to new ideas on bettering rural communities through
-        internet and/or new forms of education.
+        internet and/or new forms of education. */}
+        {pageInfo?.backgroundInformation}
       </p>
     </div>
   </motion.div>
