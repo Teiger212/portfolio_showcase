@@ -47,9 +47,10 @@ export interface Project extends SanityBody {
   _type: 'project'
   title: string
   image: Image
-  linkToBuild: string
+  linkToProjectPage: string
   summary: string
   technologies: Skill[]
+  isSideProject: boolean
 }
 
 export interface Social extends SanityBody {

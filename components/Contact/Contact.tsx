@@ -26,10 +26,10 @@ const Contact = (props: Props) => {
   }
 
   return (
-    <div className="h-screen relative flex flex-col justify-evenly items-center text-center md:text-left md:flex-row max-w-7xl px-10 mx-auto md:space-x-10">
+    <div className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:space-x-10 md:text-left">
       <h3 className="section-title">Contact</h3>
-      <div className="flex flex-col space-y-10 mt-4">
-        <h4 className="text-4xl font-semibold text-center">
+      <div className="mt-4 flex flex-col space-y-10">
+        <h4 className="text-center text-4xl font-semibold">
           US timezone web dev freelance work.{' '}
           <span className="underline decoration-[#faed3f]/50">
             Let&apos;s get in touch.
@@ -37,16 +37,16 @@ const Contact = (props: Props) => {
         </h4>
         <div className="space-y-10">
           <ContactRow label="Cusco, Peru">
-            <MapPinIcon className="text-[#faed3f] h-7 w-7 animate-pulse" />
+            <MapPinIcon className="h-7 w-7 animate-pulse text-[#faed3f]" />
           </ContactRow>
           <ContactRow label="eyalteiger@gmail.com">
-            <EnvelopeIcon className="text-[#faed3f] h-7 w-7 animate-pulse" />
+            <EnvelopeIcon className="h-7 w-7 animate-pulse text-[#faed3f]" />
           </ContactRow>
         </div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="mx-auto flex w-fit flex-col space-y-2"
         >
           <div className="flex space-x-2">
             <input
@@ -75,7 +75,7 @@ const Contact = (props: Props) => {
           />
           <button
             type="submit"
-            className="bg-[#faed3f]/60 py-5 px-10 rounded-lg text-black font-bold hover:bg-[#faed3f]/80 text-lg"
+            className="rounded-lg bg-[#faed3f]/60 py-5 px-10 text-lg font-bold text-black hover:bg-[#faed3f]/80"
           >
             Submit
           </button>

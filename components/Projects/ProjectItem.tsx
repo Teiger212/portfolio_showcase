@@ -1,30 +1,42 @@
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
+import { urlFor } from '../../sanity'
+import { Project } from '../../types'
 
-type Props = {}
+type Props = {
+  project: Project
+}
 
-const ProjectItem = (props: Props) => {
+const ProjectItem = ({ project }: Props) => {
+  const { image, title, summary, linkToProjectPage, isSideProject } = project
+
   return (
-    <div className="w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44">
+    <div className="flex h-screen w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-5 p-20 md:p-44">
       <motion.div
         initial={{ y: -300, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
-        <img src="" alt="" />
+        <Image
+          src={urlFor(image).url()}
+          alt={title}
+          width={400}
+          height={400}
+          className="shadow-xl"
+        />
       </motion.div>
-      <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-        <h4 className="text-4xl font-semibold text-center">
-          <span className="underline decoration-[#faed3f]/50">Case Study:</span>{' '}
-          UPS clone
+
+      <div className="max-w-6xl space-y-10 px-0 md:px-10">
+        <h4 className="text-center text-4xl font-semibold">
+          <span className="underline decoration-[#faed3f]/50">
+            {isSideProject ? 'Side Peoject: ' : 'Client Project: '}
+          </span>
+          {title}
         </h4>
-        <p className="text-lg text-center md:text-left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Non tellus
-          orci ac auctor augue. Pellentesque habitant morbi tristique senectus
-          et netus et. Sed tempus urna et pharetra pharetra massa massa
-          ultricies. Tortor aliquam nulla facilisi cras fermentum odio eu.
-        </p>
+        <p className="text-center text-lg md:text-left">{summary}</p>
+        <Link href={linkToProjectPage}>{linkToProjectPage}</Link>
       </div>
     </div>
   )

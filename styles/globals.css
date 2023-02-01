@@ -4,19 +4,19 @@
 
 @layer components {
   .hero-button {
-    @apply mx-2 px-6 py-2 uppercase text-xs border rounded-full border-[#242424] text-gray-400 tracking-widest transition-all duration-1000 hover:border-[#faed3f]/70 hover:text-[#faed3f]/70;
+    @apply mx-2 rounded-full border border-[#242424] px-6 py-2 text-xs uppercase tracking-widest text-gray-400 transition-all duration-1000 hover:border-[#faed3f]/70 hover:text-[#faed3f]/70;
   }
 
   .skill-icon {
-    @apply w-10 h-10 rounded-full first:mt-2.5 md:first:mt-5;
+    @apply h-10 w-10 rounded-full first:mt-2.5 md:first:mt-5;
   }
 
   .section-title {
-    @apply absolute top-16 uppercase tracking-[.75em] pl-4 text-gray-400 text-2xl;
+    @apply absolute top-12 pl-4 text-2xl uppercase tracking-[.75em] text-gray-400 lg:top-10;
   }
 
   .contact-input {
-    @apply outline-none bg-slate-400/10 rounded-md border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#faed3f]/40 hover:border-[#faed3f]/40 focus:text-[#faed3f]/40;
+    @apply rounded-md border-b border-[#242424] bg-slate-400/10 px-6 py-4 text-gray-500 placeholder-gray-500 outline-none transition-all focus:border-[#faed3f]/40 focus:text-[#faed3f]/40 hover:border-[#faed3f]/40;
   }
 
   .custom-scrollbar {

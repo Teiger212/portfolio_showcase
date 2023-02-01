@@ -14,11 +14,11 @@ const TypingTitle = ({ pageInfo }: Props) => {
 
   return (
     <div className="mt-4 mb-2">
-      <h1 className="text-sm uppercase tracking-[0.5em] pl-2 text-gray-400">
+      <h1 className="pl-2 text-sm uppercase tracking-[0.5em] text-gray-400">
         {pageInfo.role}
       </h1>
 
-      <h2 className="text-5xl lg:text-6xl font-semibold px-10">
+      <h2 className="px-10 text-5xl font-semibold lg:text-6xl">
         <span>{text}</span>
         <Cursor cursorColor="#faed3f" />
       </h2>

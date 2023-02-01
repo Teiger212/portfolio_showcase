@@ -12,19 +12,19 @@ const About = ({ pageInfo }: Props) => (
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1.5 }}
-    className="flex flex-col relative h-screen text-center items-center max-w-7xl mx-auto px-10 justify-evenly md:text-left md:flex-row"
+    className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left"
   >
     <h3 className="section-title">About</h3>
     <motion.div
       initial={{ x: -200, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 1.25 }}
-      className="-mb-20 md:mb-0 flex-shrink-0"
+      className="-mb-20 flex-shrink-0 md:mb-0"
     >
       <Image
         src={urlFor(pageInfo?.profilePic).url()}
         alt="profile pic"
-        className="rounded-full mx-auto object-cover h-56 md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+        className="md:h-95 mx-auto h-56 rounded-full object-cover md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]"
         width={224}
         height={224}
       />
@@ -35,9 +35,7 @@ const About = ({ pageInfo }: Props) => (
         A <span className="underline decoration-[#faed3f]">bit</span> about my
         background
       </h3>
-      <p className="text-base">
-        {pageInfo?.backgroundInformation}
-      </p>
+      <p className="text-base">{pageInfo?.backgroundInformation}</p>
     </div>
   </motion.div>
 )

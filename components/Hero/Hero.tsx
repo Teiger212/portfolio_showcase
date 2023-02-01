@@ -11,13 +11,13 @@ type Props = {
 }
 
 const Hero = ({ pageInfo }: Props) => (
-  <div className="h-screen flex flex-col items-center justify-center text-center overflow-hidden space-y-8">
+  <div className="flex h-screen flex-col items-center justify-center space-y-8 overflow-hidden text-center">
     <BackgroundCircles />
     <div className="z-20">
       <Image
         src={urlFor(pageInfo?.heroImage).url()}
         alt="profile pic"
-        className="relative rounded-full mx-auto object-cover"
+        className="relative mx-auto rounded-full object-cover"
         width={128}
         height={128}
       />

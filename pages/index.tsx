@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -10,10 +11,8 @@ import Hero from '../components/Hero/Hero'
 import Projects from '../components/Projects/Projects'
 import Contact from '../components/Contact/Contact'
 
-import type { Experience, PageInfo, Project, Skill, Social } from '../types'
-import { GetStaticProps } from 'next'
+import type { Experience, PageInfo, Project, Social } from '../types'
 import { fetchPageInfo } from '../utils/fetchPageInfo'
-import { fetchSkills } from '../utils/fetchSkills'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSocials } from '../utils/fetchSocials'
 import { fetchExperiences } from '../utils/fetchExperience'
@@ -23,7 +22,6 @@ type Props = {
   experiences: Experience[]
   projects: Project[]
   socials: Social[]
-  skills: Skill[]
 }
 
 export default function Home({
@@ -31,10 +29,9 @@ export default function Home({
   experiences,
   projects,
   socials,
-  skills,
 }: Props) {
   return (
-    <div className="bg-zinc-800 text-white h-screen snap-y snap-mandatory overflow-y-scroll custom-scrollbar overflow-x-hidden z-1">
+    <div className="custom-scrollbar z-1 h-screen snap-y snap-mandatory overflow-y-scroll bg-zinc-800 text-white overflow-x-hidden">
       <Head>
         <title>Eyal&apos;s Portfolio</title>
         <meta name="description" content="WebDev For Hire" />
@@ -53,7 +50,7 @@ export default function Home({
         <WorkExperience experiences={experiences} />
       </section>
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
       <section id="contact" className="snap-start">
         <Contact />
@@ -61,7 +58,7 @@ export default function Home({
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full">
           <div className="flex items-center justify-center">
-            <ArrowUpCircleIcon className="transition duration-500 h-12 w-12 rounded-full hover:fill-[#faed3f] cursor-pointer" />
+            <ArrowUpCircleIcon className="h-12 w-12 cursor-pointer rounded-full transition duration-500 hover:fill-[#faed3f]" />
           </div>
         </footer>
       </Link>
@@ -71,7 +68,6 @@ export default function Home({
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo()
-  const skills: Skill[] = await fetchSkills()
   const projects: Project[] = await fetchProjects()
   const socials: Social[] = await fetchSocials()
   const experiences: Experience[] = await fetchExperiences()
@@ -79,7 +75,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       pageInfo,
-      skills,
       experiences,
       socials,
       projects,

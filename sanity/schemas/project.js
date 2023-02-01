@@ -33,5 +33,10 @@ export default {
       title: 'Link To Project Page',
       type: 'url',
     },
+    {
+      name: 'isSideProject',
+      title: 'Is Side Project',
+      type: 'boolean',
+    },
   ],
 }
