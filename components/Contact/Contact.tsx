@@ -36,10 +36,7 @@ const Contact = (props: Props) => {
           </span>
         </h4>
         <div className="space-y-10">
-          <ContactRow label={PHONE_NUMBER}>
-            <PhoneIcon className="text-[#faed3f] h-7 w-7 animate-pulse" />
-          </ContactRow>
-          <ContactRow label="123 Marlow Dr., Eerie, PA">
+          <ContactRow label="Cusco, Peru">
             <MapPinIcon className="text-[#faed3f] h-7 w-7 animate-pulse" />
           </ContactRow>
           <ContactRow label="eyalteiger@gmail.com">

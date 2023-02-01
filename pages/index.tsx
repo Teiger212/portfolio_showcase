@@ -1,15 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { ArrowUpCircleIcon } from '@heroicons/react/24/solid'
-import profilePic from '../public/profile.jpeg'
 
 import About from '../components/About'
 import WorkExperience from '../components/WorkExperience/Experience'
 import Header from '../components/Header/Header'
 import Hero from '../components/Hero/Hero'
-import Skills from '../components/Skills/Skills'
 import Projects from '../components/Projects/Projects'
 import Contact from '../components/Contact/Contact'
 
@@ -53,7 +50,7 @@ export default function Home({
         <About pageInfo={pageInfo} />
       </section>
       <section id="experience" className="snap-center">
-        <WorkExperience />
+        <WorkExperience experiences={experiences} />
       </section>
       <section id="projects" className="snap-start">
         <Projects />
@@ -62,9 +59,9 @@ export default function Home({
         <Contact />
       </section>
       <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
+        <footer className="sticky bottom-5 w-full">
           <div className="flex items-center justify-center">
-            <ArrowUpCircleIcon className="h-12 w-12 rounded-full" />
+            <ArrowUpCircleIcon className="transition duration-500 h-12 w-12 rounded-full hover:fill-[#faed3f] cursor-pointer" />
           </div>
         </footer>
       </Link>

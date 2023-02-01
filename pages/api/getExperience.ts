@@ -3,10 +3,13 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { sanityClient } from '../../sanity'
 import type { Experience } from '../../types'
 
-const query = groq`*[_type == "experience"] {
+const query = groq`
+  *[_type == "experience"] {
   ...,
-  tetchnologies[]->
-}`
+  technologies[]->
+  }
+  | order(dateEnded asc)
+`
 
 export default async function handler(
   req: NextApiRequest,

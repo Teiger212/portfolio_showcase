@@ -5,7 +5,7 @@ import type { Project } from '../../types'
 
 const query = groq`*[_type == "project"] {
   ...,
-  tetchnologies[]->
+  technologies[]->
 }`
 
 export default async function handler(

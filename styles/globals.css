@@ -8,11 +8,11 @@
   }
 
   .skill-icon {
-    @apply w-10 h-10 rounded-full;
+    @apply w-10 h-10 rounded-full first:mt-2.5 md:first:mt-5;
   }
 
   .section-title {
-    @apply absolute top-24 uppercase tracking-[1em] pl-4 text-gray-400 text-2xl;
+    @apply absolute top-16 uppercase tracking-[.75em] pl-4 text-gray-400 text-2xl;
   }
 
   .contact-input {
@@ -21,5 +21,9 @@
 
   .custom-scrollbar {
     @apply scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#faed3f]/60;
+  }
+
+  .job-details-scrollbar {
+    @apply scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-[#faed3f]/80;
   }
 }

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import profilePic from '../public/profile.jpeg'
 import { motion } from 'framer-motion'
 import { PageInfo } from '../types'
 import { urlFor } from '../sanity'
@@ -37,13 +36,6 @@ const About = ({ pageInfo }: Props) => (
         background
       </h3>
       <p className="text-base">
-        {/* Currently live in Cusco, Peru. Born and raised in Israel, have roots in
-        Sweden & the UK. An average hiker who likes exploring new cultures,
-        nature and also a decent cook. Currently focused on Javascript, mostly
-        front-end using React. On a journey building my own online business and
-        learning on my way up. Have a keen eye for UI, UX & design in general.
-        Interested and open to new ideas on bettering rural communities through
-        internet and/or new forms of education. */}
         {pageInfo?.backgroundInformation}
       </p>
     </div>

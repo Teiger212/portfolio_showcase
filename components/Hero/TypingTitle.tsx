@@ -6,7 +6,7 @@ type Props = {
   pageInfo: PageInfo
 }
 
-const Typing = ({ pageInfo }: Props) => {
+const TypingTitle = ({ pageInfo }: Props) => {
   const [text] = useTypewriter({
     words: ['Hey, Eyal here!', 'Sometimes funny', 'Always curious'],
     loop: 0,
@@ -26,4 +26,4 @@ const Typing = ({ pageInfo }: Props) => {
   )
 }
 
-export default Typing
+export default TypingTitle
