@@ -20,10 +20,8 @@ const Contact = (props: Props) => {
     formState: { errors },
   } = useForm<Inputs>({ mode: 'onBlur' })
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    // console.log(data)
-    window.location.href = `mailto:eyalteiger@gmail.com?subject=${data.subject}&body=Hi my name is ${data.name}. ${data.message}.`
-  }
+  const onSubmit: SubmitHandler<Inputs> = (data) =>
+    (window.location.href = `mailto:eyalteiger@gmail.com?subject=${data.subject}&body=Hi my name is ${data.name}. ${data.message}.`)
 
   return (
     <div className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:space-x-10 md:text-left">
