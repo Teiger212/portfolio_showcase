@@ -12,7 +12,7 @@ const About = ({ pageInfo }: Props) => (
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1.5 }}
-    className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left"
+    className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10  text-center md:flex-row md:text-left"
   >
     <h3 className="section-title">About</h3>
     <motion.div
@@ -24,7 +24,7 @@ const About = ({ pageInfo }: Props) => (
       <Image
         src={urlFor(pageInfo?.profilePic).url()}
         alt="profile pic"
-        className="md:h-95 mx-auto h-56 rounded-full object-cover md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]"
+        className="mx-auto h-56 w-auto rounded-full object-cover md:h-64 md:rounded-lg xl:h-[600px]"
         width={224}
         height={224}
       />

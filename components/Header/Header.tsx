@@ -7,7 +7,7 @@ type Props = {
 }
 
 const Header = ({ socials }: Props) => (
-  <header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-start justify-end p-5">
+  <header className="sticky top-0 z-20 mx-auto flex max-w-7xl justify-end space-x-10  p-5">
     <motion.div
       initial={{ x: 500, opacity: 0, scale: 0.25 }}
       animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -15,7 +15,13 @@ const Header = ({ socials }: Props) => (
       className="flex flex-row"
     >
       {socials.map(({ _id, link }) => (
-        <SocialIcon key={_id} url={link} fgColor="gray" bgColor="transparent" />
+        <SocialIcon
+          key={_id}
+          url={link}
+          fgColor="gray"
+          bgColor="transparent"
+          className="mr-3"
+        />
       ))}
 
       <div className="flex cursor-pointer flex-row items-center text-gray-300">

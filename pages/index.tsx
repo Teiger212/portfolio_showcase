@@ -16,6 +16,8 @@ import { fetchPageInfo } from '../utils/fetchPageInfo'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSocials } from '../utils/fetchSocials'
 import { fetchExperiences } from '../utils/fetchExperience'
+import { useRef } from 'react'
+import { motion, useScroll } from 'framer-motion'
 
 type Props = {
   pageInfo: PageInfo
@@ -30,8 +32,14 @@ export default function Home({
   projects,
   socials,
 }: Props) {
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({ container: containerRef })
+
   return (
-    <div className="custom-scrollbar z-1 h-screen snap-y snap-mandatory overflow-y-scroll bg-zinc-800 text-white overflow-x-hidden">
+    <div
+      className="custom-scrollbar z-1 h-screen snap-y snap-mandatory overflow-y-scroll bg-zinc-800 text-white overflow-x-hidden"
+      ref={containerRef}
+    >
       <Head>
         <title>Eyal&apos;s Portfolio</title>
         <meta name="description" content="WebDev For Hire" />
@@ -58,7 +66,9 @@ export default function Home({
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full">
           <div className="flex items-center justify-center">
-            <ArrowUpCircleIcon className="h-12 w-12 cursor-pointer rounded-full transition duration-500 hover:fill-[#faed3f]" />
+            <motion.div style={{ opacity: scrollYProgress }}>
+              <ArrowUpCircleIcon className="h-12 w-12 cursor-pointer rounded-full transition duration-500 hover:fill-[#faed3f]" />
+            </motion.div>
           </div>
         </footer>
       </Link>

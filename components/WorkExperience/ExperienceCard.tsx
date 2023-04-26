@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { urlFor } from '../../sanity'
 import { getEmploymentDates } from '../../utils'
 import type {
-  EmploymentProps,
   ExperienceProps,
   CardImageProps,
   TechnologyProps,

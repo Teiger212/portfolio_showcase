@@ -20,6 +20,7 @@ const Hero = ({ pageInfo }: Props) => (
         className="relative mx-auto rounded-full object-cover"
         width={128}
         height={128}
+        priority
       />
       <TypingTitle pageInfo={pageInfo} />
       <Link href="#about">
