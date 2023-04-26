@@ -12,7 +12,7 @@ const ProjectItem = ({ project }: Props) => {
   const { image, title, summary, linkToProjectPage, isSideProject } = project
 
   return (
-    <div className="flex h-screen w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-5 p-20 md:p-44">
+    <article className="flex w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-5 p-10 md:p-4">
       <motion.div
         initial={{ y: -300, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -38,7 +38,7 @@ const ProjectItem = ({ project }: Props) => {
         <p className="text-center text-lg md:text-left">{summary}</p>
         <Link href={linkToProjectPage}>{linkToProjectPage}</Link>
       </div>
-    </div>
+    </article>
   )
 }
 
