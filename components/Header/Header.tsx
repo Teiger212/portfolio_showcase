@@ -25,13 +25,18 @@ const Header = ({ socials }: Props) => (
         />
       ))}
 
-      <Link
-        className="flex cursor-pointer flex-row items-center text-gray-300"
-        href="mailto:eyalteiger@gmail.com"
-      >
-        <SocialIcon fgColor="gray" bgColor="transparent" network="email" />
-        <p className=" hidden uppercase md:inline-flex">contact me</p>
-      </Link>
+      <div className="flex  flex-row items-center text-gray-300">
+        <SocialIcon
+          className="cursor-pointer"
+          fgColor="gray"
+          bgColor="transparent"
+          network="email"
+          href="mailto:eyalteiger@gmail.com"
+        />
+        <p className="hidden select-none uppercase md:inline-flex">
+          contact me
+        </p>
+      </div>
     </motion.div>
   </header>
 )
