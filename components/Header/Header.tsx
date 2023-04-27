@@ -26,7 +26,7 @@ const Header = ({ socials }: Props) => (
 
       <div className="flex cursor-pointer flex-row items-center text-gray-300">
         <SocialIcon
-          href="mailto:eyalteiger@gmail.com"
+          url="mailto:eyalteiger@gmail.com"
           fgColor="gray"
           bgColor="transparent"
           network="email"
