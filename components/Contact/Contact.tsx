@@ -24,9 +24,9 @@ const Contact = (props: Props) => {
     (window.location.href = `mailto:eyalteiger@gmail.com?subject=${data.subject}&body=Hi my name is ${data.name}. ${data.message}.`)
 
   return (
-    <div className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:space-x-10 md:text-left">
+    <div className="relative mx-auto flex h-screen max-w-full flex-col items-center justify-evenly px-10 text-center md:flex-row md:space-x-10 md:text-left">
       <h3 className="section-title">Contact</h3>
-      <div className="mt-4 flex flex-col space-y-10">
+      <div className="mt-4 flex max-w-full flex-col space-y-10">
         <h4 className="text-center text-4xl font-semibold">
           US timezone web dev freelance work.{' '}
           <span className="underline decoration-[#faed3f]/50">
@@ -44,9 +44,9 @@ const Contact = (props: Props) => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="mx-auto flex w-fit flex-col space-y-2"
+          className="mx-auto flex w-full flex-col space-y-2"
         >
-          <div className="flex space-x-2">
+          <div className="flex flex-col space-y-2 md:flex-row md:space-x-2">
             <input
               {...register('name', { required: true, minLength: 2 })}
               className="contact-input"

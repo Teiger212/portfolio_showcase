@@ -24,9 +24,9 @@ const About = ({ pageInfo }: Props) => (
       <Image
         src={urlFor(pageInfo?.profilePic).url()}
         alt="profile pic"
-        className="mx-auto h-56 w-auto rounded-full object-cover md:h-64 md:rounded-lg xl:h-[600px]"
-        width={224}
-        height={224}
+        className="h-38 mx-auto w-auto rounded-full object-cover md:h-44 md:rounded-lg xl:h-64"
+        width={140}
+        height={140}
       />
     </motion.div>
 
