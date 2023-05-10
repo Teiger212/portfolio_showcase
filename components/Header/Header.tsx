@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { SocialIcon } from 'react-social-icons'
 import type { Social } from '../../types'
 
@@ -33,9 +32,7 @@ const Header = ({ socials }: Props) => (
           network="email"
           href="mailto:eyalteiger@gmail.com"
         />
-        <p className="hidden select-none uppercase md:inline-flex">
-          contact me
-        </p>
+        <p className="hidden uppercase md:inline-flex">contact me</p>
       </div>
     </motion.div>
   </header>

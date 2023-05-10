@@ -1,12 +1,10 @@
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
-import type { PageInfo } from '../../types'
-
 type Props = {
-  pageInfo: PageInfo
+  role: string
 }
 
-const TypingTitle = ({ pageInfo }: Props) => {
+const TypingTitle = ({ role }: Props) => {
   const [text] = useTypewriter({
     words: ['Hey, Eyal here!', 'Sometimes funny', 'Always curious'],
     loop: 0,
@@ -15,10 +13,10 @@ const TypingTitle = ({ pageInfo }: Props) => {
   return (
     <div className="mt-4 mb-2">
       <h1 className="pl-2 text-sm uppercase tracking-[0.5em] text-gray-400">
-        {pageInfo.role}
+        {role}
       </h1>
 
-      <h2 className="px-10 text-5xl font-semibold lg:text-6xl">
+      <h2 className="px-10 text-4xl font-semibold lg:text-5xl">
         <span>{text}</span>
         <Cursor cursorColor="#faed3f" />
       </h2>
