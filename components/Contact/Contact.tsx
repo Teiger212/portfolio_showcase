@@ -46,16 +46,16 @@ const Contact = (props: Props) => {
           onSubmit={handleSubmit(onSubmit)}
           className="mx-auto flex w-full flex-col space-y-2"
         >
-          <div className="flex flex-col space-y-2 md:flex-row md:space-x-2">
+          <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
             <input
               {...register('name', { required: true, minLength: 2 })}
-              className="contact-input"
+              className="contact-input grow"
               type="text"
               placeholder="Name"
             />
             <input
               {...register('email')}
-              className="contact-input"
+              className="contact-input grow"
               type="email"
               placeholder="Email"
             />
